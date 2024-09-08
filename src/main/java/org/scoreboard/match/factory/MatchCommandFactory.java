@@ -14,10 +14,11 @@ import org.scoreboard.match.update.UpdateScoreCommandHandler;
 
 @RequiredArgsConstructor
 public class MatchCommandFactory {
+    private final MatchFactory matchFactory;
     private final MatchRepository matchRepository;
 
     Commnad<Match> startMatch(String homeTeam, String awayTeam) {
-        return new StarMatchCommand(homeTeam, awayTeam, new StartMatchCommandHandler(matchRepository));
+        return new StarMatchCommand(homeTeam, awayTeam, new StartMatchCommandHandler(matchFactory, matchRepository));
     }
 
     Commnad<Match> updateMatchScore(String matchId, int homeTeamScore, int awayTeamScore) {

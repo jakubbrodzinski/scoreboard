@@ -11,6 +11,7 @@ public class UpdateScoreCommandHandler implements CommandHandler<UpdateScoreComm
 
     @Override
     public Match handle(UpdateScoreCommand command) {
+        //todo 1. find match and update, or else create a new one with the score.
         return null;
     }
 }
