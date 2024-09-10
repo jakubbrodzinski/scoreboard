@@ -144,13 +144,13 @@ class InMemoryMatchRepositoryTest {
         }
 
         @Test
-        void shouldHandleOrdersWithIdenticalRank() {
+        void shouldReturnMatchWithBiggerIdWhenTotalScoreAndTimestampAreEqual() {
             repository.save(match("match-with-same-rank-1", "2012-01-01T12:00:00Z", 3, 2));
             repository.save(match("match-with-same-rank-2", "2022-01-01T12:00:00Z", 2, 3));
 
             assertThat(repository.getRankedMatches())
                     .extracting(Match::getMatchId)
-                    .containsExactly("match-with-same-rank-1","match-with-same-rank-2");
+                    .containsExactly("match-with-same-rank-2","match-with-same-rank-1");
         }
     }
 
@@ -158,6 +158,8 @@ class InMemoryMatchRepositoryTest {
         return Match.builder()
                 .matchId(matchId)
                 .creationDateTime(Instant.parse(creationDateTime))
+                .homeTeamScore(new TeamScore("dummy-team"))
+                .awayTeamScore(new TeamScore("dummy-team"))
                 .build();
     }
 
@@ -166,7 +168,7 @@ class InMemoryMatchRepositoryTest {
                 .matchId(matchId)
                 .creationDateTime(Instant.parse(creationDateTime))
                 .homeTeamScore(new TeamScore("dummy-team", homeTeamScore))
-                .homeTeamScore(new TeamScore("dummy-team", awayTeamScore))
+                .awayTeamScore(new TeamScore("dummy-team", awayTeamScore))
                 .build();
     }
 }
