@@ -9,6 +9,7 @@ import org.scoreboard.match.model.MatchScore;
 @RequiredArgsConstructor
 @Getter
 public class UpdateScoreCommand implements Commnad<Match> {
+    private final String matchId;
     private final MatchScore matchScore;
     private final UpdateScoreCommandHandler commandHandler;
 

@@ -45,7 +45,8 @@ class MatchCommandFactoryTest {
         assertThat(result)
                 .asInstanceOf(type(UpdateScoreCommand.class))
                 .satisfies(command -> {
-                    assertThat(command.getMatchScore()).isEqualTo(new MatchScore("match-id", 5, 2));
+                    assertThat(command.getMatchId()).isEqualTo("match-id");
+                    assertThat(command.getMatchScore()).isEqualTo(new MatchScore(5, 2));
                     assertThat(command.getCommandHandler()).isInstanceOf(UpdateScoreCommandHandler.class);
                 });
     }

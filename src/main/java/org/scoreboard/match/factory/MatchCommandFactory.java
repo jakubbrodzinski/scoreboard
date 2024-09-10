@@ -23,7 +23,8 @@ public class MatchCommandFactory {
 
     Commnad<Match> updateMatchScore(String matchId, int homeTeamScore, int awayTeamScore) {
         return new UpdateScoreCommand(
-                new MatchScore(matchId, homeTeamScore, awayTeamScore),
+                matchId,
+                new MatchScore(homeTeamScore, awayTeamScore),
                 new UpdateScoreCommandHandler(matchRepository));
     }
 
