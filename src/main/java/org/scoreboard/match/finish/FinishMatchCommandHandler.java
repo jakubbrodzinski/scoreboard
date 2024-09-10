@@ -8,8 +8,9 @@ import org.scoreboard.match.repository.MatchRepository;
 @RequiredArgsConstructor
 public class FinishMatchCommandHandler implements CommandHandler<FinishMatchCommand, Match> {
     private final MatchRepository matchRepository;
+
     @Override
     public Match handle(FinishMatchCommand command) {
-        return null;
+        return matchRepository.removeById(command.getMatchId());
     }
 }
