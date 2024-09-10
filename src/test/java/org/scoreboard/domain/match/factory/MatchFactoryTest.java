@@ -1,7 +1,6 @@
 package org.scoreboard.domain.match.factory;
 
 import org.junit.jupiter.api.Test;
-import org.scoreboard.domain.match.factory.MatchFactory;
 
 import java.util.UUID;
 

@@ -8,8 +8,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.scoreboard.domain.match.factory.MatchFactory;
 import org.scoreboard.domain.match.model.Match;
 import org.scoreboard.domain.match.repository.MatchRepository;
-import org.scoreboard.domain.match.start.StarMatchCommand;
-import org.scoreboard.domain.match.start.StartMatchCommandHandler;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.same;

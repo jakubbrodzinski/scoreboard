@@ -5,8 +5,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.scoreboard.domain.match.finish.FinishMatchCommand;
-import org.scoreboard.domain.match.finish.FinishMatchCommandHandler;
 import org.scoreboard.domain.match.model.Match;
 import org.scoreboard.domain.match.repository.MatchRepository;
 import org.scoreboard.domain.match.repository.exception.MatchNotFoundException;

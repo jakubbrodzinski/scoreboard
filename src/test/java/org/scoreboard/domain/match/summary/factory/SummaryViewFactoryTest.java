@@ -3,7 +3,6 @@ package org.scoreboard.domain.match.summary.factory;
 import org.junit.jupiter.api.Test;
 import org.scoreboard.domain.match.model.Match;
 import org.scoreboard.domain.match.model.TeamScore;
-import org.scoreboard.domain.match.summary.factory.SummaryViewFactory;
 import org.scoreboard.domain.match.summary.model.MatchSummary;
 
 import java.util.List;

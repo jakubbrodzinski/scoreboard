@@ -10,8 +10,6 @@ import org.scoreboard.domain.match.model.MatchScore;
 import org.scoreboard.domain.match.model.TeamScore;
 import org.scoreboard.domain.match.repository.MatchRepository;
 import org.scoreboard.domain.match.repository.exception.MatchNotFoundException;
-import org.scoreboard.domain.match.update.UpdateScoreCommand;
-import org.scoreboard.domain.match.update.UpdateScoreCommandHandler;
 
 import java.util.Optional;
 
