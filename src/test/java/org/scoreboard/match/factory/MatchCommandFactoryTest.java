@@ -11,6 +11,8 @@ import org.scoreboard.match.model.MatchScore;
 import org.scoreboard.match.repository.MatchRepository;
 import org.scoreboard.match.start.StarMatchCommand;
 import org.scoreboard.match.start.StartMatchCommandHandler;
+import org.scoreboard.match.summary.SummaryViewCommand;
+import org.scoreboard.match.summary.SummaryViewCommandHandler;
 import org.scoreboard.match.update.UpdateScoreCommand;
 import org.scoreboard.match.update.UpdateScoreCommandHandler;
 
@@ -60,6 +62,17 @@ class MatchCommandFactoryTest {
                 .satisfies(command -> {
                     assertThat(command.getMatchId()).isEqualTo("match-id");
                     assertThat(command.getCommandHandler()).isInstanceOf(FinishMatchCommandHandler.class);
+                });
+    }
+
+    @Test
+    void shouldCreateSummaryViewCommand() {
+        var result = factory.summaryView();
+
+        assertThat(result)
+                .asInstanceOf(type(SummaryViewCommand.class))
+                .satisfies(command -> {
+                    assertThat(command.getCommandHandler()).isInstanceOf(SummaryViewCommandHandler.class);
                 });
     }
 }

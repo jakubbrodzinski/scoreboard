@@ -9,6 +9,10 @@ import org.scoreboard.match.model.MatchScore;
 import org.scoreboard.match.repository.MatchRepository;
 import org.scoreboard.match.start.StarMatchCommand;
 import org.scoreboard.match.start.StartMatchCommandHandler;
+import org.scoreboard.match.summary.SummaryViewCommand;
+import org.scoreboard.match.summary.SummaryViewCommandHandler;
+import org.scoreboard.match.summary.factory.SummaryViewFactory;
+import org.scoreboard.match.summary.model.SummaryView;
 import org.scoreboard.match.update.UpdateScoreCommand;
 import org.scoreboard.match.update.UpdateScoreCommandHandler;
 
@@ -16,6 +20,7 @@ import org.scoreboard.match.update.UpdateScoreCommandHandler;
 public class MatchCommandFactory {
     private final MatchFactory matchFactory;
     private final MatchRepository matchRepository;
+    private final SummaryViewFactory summaryViewFactory;
 
     Commnad<Match> startMatch(String homeTeam, String awayTeam) {
         return new StarMatchCommand(homeTeam, awayTeam, new StartMatchCommandHandler(matchFactory, matchRepository));
@@ -30,5 +35,9 @@ public class MatchCommandFactory {
 
     Commnad<Match> finishMatch(String matchId) {
         return new FinishMatchCommand(matchId, new FinishMatchCommandHandler(matchRepository));
+    }
+
+    Commnad<SummaryView> summaryView() {
+        return new SummaryViewCommand(new SummaryViewCommandHandler(matchRepository, summaryViewFactory));
     }
 }
