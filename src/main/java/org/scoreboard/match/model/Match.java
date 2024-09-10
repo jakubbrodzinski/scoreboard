@@ -1,6 +1,7 @@
 package org.scoreboard.match.model;
 
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -9,6 +10,7 @@ import java.time.Instant;
 @RequiredArgsConstructor
 @Getter
 @Builder(toBuilder = true)
+@EqualsAndHashCode
 public class Match {
     private final String matchId;
     private final Instant creationDateTime;
