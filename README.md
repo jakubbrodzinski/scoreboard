@@ -3,7 +3,7 @@
 ## Assumptions:
 - Scoreboard is a library that is responsible for summary generation of currently played matches.
 - Scoreboard library does not need to store the information about the way data/matches change - the end user is solely interested in aggregated view of it.
-- Both the summary view and ranking (the order in which matches appear in summary) is updated/calculated eagerly, making it much quicker to access for the lib's user. 
+- Both the summary view and ranking (the order in which matches appear in summary) is calculated and updated eagerly. End user will get the summary much quicker.  
 - Library's code is built around domain class called `Match`.
 - Match is identified by `UUID`, teams identified by `String`.
 - Finishing a match deletes it from the library. Based on library use case (or responsibility), that data won't be ever used/needed.
