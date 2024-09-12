@@ -65,6 +65,6 @@ class UpdateScoreCommandHandlerTest {
 
         var result = command.execute();
 
-        verify(matchRepository).save(same(result));
+        verify(matchRepository).update(same(result));
     }
 }

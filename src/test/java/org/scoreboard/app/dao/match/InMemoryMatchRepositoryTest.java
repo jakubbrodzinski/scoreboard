@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.scoreboard.domain.match.model.Match;
+import org.scoreboard.domain.match.model.MatchScore;
 import org.scoreboard.domain.match.model.TeamScore;
 import org.scoreboard.domain.match.repository.exception.DuplicatedMatchException;
 import org.scoreboard.domain.match.repository.exception.MatchNotFoundException;
@@ -111,6 +112,44 @@ class InMemoryMatchRepositoryTest {
     }
 
     @Nested
+    class Update {
+        @Test
+        void shouldUpdateMatch() {
+            //given
+            var match = Match.builder()
+                    .matchId("match-id")
+                    .creationDateTime(Instant.now())
+                    .homeTeamScore(new TeamScore("home team", 5))
+                    .awayTeamScore(new TeamScore("away team", 2))
+                    .build();
+            repository.save(match);
+
+            var updatedMatch = match.updateScore(new MatchScore(3, 3));
+            repository.update(updatedMatch);
+
+            //when
+            var result = repository.findById("match-id");
+
+            //then
+            assertThat(result).hasValue(updatedMatch);
+        }
+
+        @Test
+        void shouldThrowExceptionWhenUpdatingNonExistingMatch() {
+            //given
+            var match = Match.builder()
+                    .matchId("match-id")
+                    .creationDateTime(Instant.now())
+                    .homeTeamScore(new TeamScore("home team", 5))
+                    .awayTeamScore(new TeamScore("away team", 2))
+                    .build();
+
+            assertThatThrownBy(() -> repository.update(match))
+                    .isInstanceOf(MatchNotFoundException.class);
+        }
+    }
+
+    @Nested
     class GetRankedMatches {
         @Test
         void shouldReturnMatchesInRankedOrder() {
@@ -150,7 +189,7 @@ class InMemoryMatchRepositoryTest {
 
             assertThat(repository.getRankedMatches())
                     .extracting(Match::getMatchId)
-                    .containsExactly("match-with-same-rank-2","match-with-same-rank-1");
+                    .containsExactly("match-with-same-rank-2", "match-with-same-rank-1");
         }
     }
 

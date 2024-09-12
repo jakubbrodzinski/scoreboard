@@ -15,7 +15,7 @@ public class UpdateScoreCommandHandler implements CommandHandler<UpdateScoreComm
         var updatedMatch = getMatch(command)
                 .updateScore(command.getMatchScore());
 
-        matchRepository.save(updatedMatch);
+        matchRepository.update(updatedMatch);
         return updatedMatch;
     }
 

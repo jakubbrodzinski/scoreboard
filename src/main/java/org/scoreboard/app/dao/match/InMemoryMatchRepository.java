@@ -11,7 +11,6 @@ import java.util.*;
 
 import static java.util.Comparator.reverseOrder;
 
-//todo e2e test
 public class InMemoryMatchRepository implements MatchRepository {
     private final MatchEntryFactory matchEntryFactory = new MatchEntryFactory();
     private final Map<String, MatchEntry> DB = new HashMap<>();
@@ -23,6 +22,18 @@ public class InMemoryMatchRepository implements MatchRepository {
             throw new DuplicatedMatchException(match.getMatchId());
         } else {
             var matchEntry = matchEntryFactory.create(match);
+            DB.put(matchEntry.getId(), matchEntry);
+            RANKING_INDEX.add(matchEntry.getSortKey());
+        }
+    }
+
+    @Override
+    public void update(Match match) {
+        var matchEntry = matchEntryFactory.create(match);
+        if (!DB.containsKey(matchEntry.getId())) {
+            throw new MatchNotFoundException(match.getMatchId());
+        } else {
+            RANKING_INDEX.remove(DB.get(matchEntry.getId()).getSortKey());
             DB.put(matchEntry.getId(), matchEntry);
             RANKING_INDEX.add(matchEntry.getSortKey());
         }

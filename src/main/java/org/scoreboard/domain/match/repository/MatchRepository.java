@@ -8,6 +8,8 @@ import java.util.Optional;
 public interface MatchRepository {
     void save(Match match);
 
+    void update(Match match);
+
     Optional<Match> findById(String matchId);
 
     Match removeById(String matchId);
