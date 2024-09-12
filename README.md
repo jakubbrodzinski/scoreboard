@@ -1,19 +1,15 @@
+# Football World Cup Score Board
 
-## Overcomplicated approach:
-- Separation between the domain code and some adapters i.e. Repositories
-- The solution contain two main "entitites": 
-  - _Match_ - that is a sequence of events
-  - _Score_ - that is simplfied, precalculated 
-- Regarding the last requirement:
-  - _total score_ is the sum of scored goals in a match by both teams.
-
-### I shouldn't be worried about the match at all. My responsibility is solely a scoreboard part.
-
-
-## Simplfied #2 approach
-- Match identified by ID,
-- Teams identified by Strings.
-- Can just remove finished match - from scoreboard perspective, we don't need it.
-- Went w/ more anemic model, where most of the 
-- No validation of scores - this should happen somewhere else - scoreboard is an end client.
-  - Nope - by making a command Update Score (instead of for example `Goal Score` i would need some validation, right?)
+## Assumptions:
+- Scoreboard is a library that is responsible for summary generation of currently played matches.
+- Scoreboard library does not need to store the information about the way data/matches change - the end user is solely interested in aggregated view of it.
+- Both the summary view and ranking (the order in which matches appear in summary) is updated/calculated eagerly, making it much quicker to access for the lib's user. 
+- Library's code is built around domain class called `Match`.
+- Match is identified by `UUID`, teams identified by `String`.
+- Finishing a match deletes it from the library. Based on library use case (or responsibility), that data won't be ever used/needed.
+- Commands (or Events) that are executed on scoreboard come in right order. Based on this assumptions, few decisions around validation have been made:
+  - updating scores lack any validation - update from `X 1 - Y 2` to `X 0 - Y 0` is considered valid,
+  - updating not started match results in error,
+  - deleting not existing match results in error.
+- Is not "thread-safe". Although implementing repository in the concurrent safe manner could help, the assumption around events' order must remain valid.
+  

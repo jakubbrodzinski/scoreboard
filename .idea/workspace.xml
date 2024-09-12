@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="271d1d47-52fc-46a0-9213-062a86a0e64c" name="Changes" comment="e2e tests">
+    <list default="true" id="271d1d47-52fc-46a0-9213-062a86a0e64c" name="Changes" comment="e2e tests fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/scoreboard/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,37 +58,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Gradle.Build scoreboard.executor": "Run",
-    "Gradle.FinishMatchCommandHandlerTest.executor": "Run",
-    "Gradle.GetRankedMatches.executor": "Run",
-    "Gradle.GetRankedMatches.shouldReturnMatchesInRankedOrder.executor": "Run",
-    "Gradle.InMemoryMatchRepositoryTest.executor": "Run",
-    "Gradle.MatchDaoFactoryTest.executor": "Run",
-    "Gradle.MatchEntryFactoryTest.executor": "Run",
-    "Gradle.MatchFactoryTest.executor": "Run",
-    "Gradle.MatchTest.executor": "Run",
-    "Gradle.ScoreBoardE2eTest.executor": "Run",
-    "Gradle.ScoreBoardE2eTest.testMainScenario.executor": "Run",
-    "Gradle.ScoreBoardE2eTest.testUpdate.executor": "Run",
-    "Gradle.StartMatchCommandHandlerTest.executor": "Run",
-    "Gradle.SummaryViewCommandHandlerTest.executor": "Run",
-    "Gradle.SummaryViewFactoryTest.executor": "Debug",
-    "Gradle.Tests in 'org.scoreboard'.executor": "Run",
-    "Gradle.Tests in 'org.scoreboard.match'.executor": "Run",
-    "Gradle.UpdateScoreCommandHandlerTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/jakubbrodzinski/IdeaProjects/scoreboard/src/main/java/org/scoreboard/match/finish",
-    "onboarding.tips.debug.path": "/Users/jakubbrodzinski/IdeaProjects/scoreboard/src/main/java/org/example/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.Build scoreboard.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.FinishMatchCommandHandlerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GetRankedMatches.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GetRankedMatches.shouldReturnMatchesInRankedOrder.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.InMemoryMatchRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MatchDaoFactoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MatchEntryFactoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MatchFactoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MatchTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ScoreBoardE2eTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ScoreBoardE2eTest.testMainScenario.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ScoreBoardE2eTest.testUpdate.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.StartMatchCommandHandlerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SummaryViewCommandHandlerTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SummaryViewFactoryTest.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.Tests in 'org.scoreboard'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Tests in 'org.scoreboard.match'.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.UpdateScoreCommandHandlerTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jakubbrodzinski/IdeaProjects/scoreboard/src/main/java/org/scoreboard/match/finish&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/jakubbrodzinski/IdeaProjects/scoreboard/src/main/java/org/example/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.scoreboard.match.repository" />
@@ -386,7 +387,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726144341168</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="e2e tests fix">
+      <option name="closed" value="true" />
+      <created>1726144534896</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1726144534896</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -419,7 +428,8 @@
     <MESSAGE value="update repository method" />
     <MESSAGE value="position fix" />
     <MESSAGE value="e2e tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="e2e tests" />
+    <MESSAGE value="e2e tests fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="e2e tests fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
