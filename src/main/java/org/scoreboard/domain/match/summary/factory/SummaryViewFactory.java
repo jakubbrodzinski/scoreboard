@@ -13,7 +13,7 @@ import static java.util.stream.Collectors.toList;
 public class SummaryViewFactory {
     public SummaryView create(List<Match> matches) {
         return IntStream.range(0, matches.size())
-                .mapToObj(index -> create(index, matches.get(index)))
+                .mapToObj(index -> create(index + 1, matches.get(index)))
                 .collect(collectingAndThen(toList(), SummaryView::new));
     }
 

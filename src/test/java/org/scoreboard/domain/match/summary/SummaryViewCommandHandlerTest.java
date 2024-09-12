@@ -7,8 +7,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.scoreboard.domain.match.model.Match;
 import org.scoreboard.domain.match.repository.MatchRepository;
-import org.scoreboard.domain.match.summary.SummaryViewCommand;
-import org.scoreboard.domain.match.summary.SummaryViewCommandHandler;
 import org.scoreboard.domain.match.summary.factory.SummaryViewFactory;
 import org.scoreboard.domain.match.summary.model.MatchSummary;
 import org.scoreboard.domain.match.summary.model.SummaryView;

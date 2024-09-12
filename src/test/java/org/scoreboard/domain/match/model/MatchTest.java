@@ -2,9 +2,6 @@ package org.scoreboard.domain.match.model;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.scoreboard.domain.match.model.Match;
-import org.scoreboard.domain.match.model.MatchScore;
-import org.scoreboard.domain.match.model.TeamScore;
 
 import static java.time.Instant.parse;
 import static org.assertj.core.api.Assertions.assertThat;

@@ -34,7 +34,7 @@ class SummaryViewFactoryTest {
 
         assertThat(result.matches())
                 .extracting(MatchSummary::matchId, MatchSummary::position)
-                .containsExactly(tuple("match-0",0),tuple("match-1",1),tuple("match-2",2));
+                .containsExactly(tuple("match-0", 1), tuple("match-1", 2), tuple("match-2", 3));
     }
 
     private Match match(String matchId) {
