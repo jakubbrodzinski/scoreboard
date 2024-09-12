@@ -24,22 +24,22 @@ public class ScoreBoardE2eTest {
 
     @Test
     void testMainScenario() {
+        var germanyFranceMatch = commandFactory.startMatch("Germany", "France")
+                .execute();
         var mexicoCanadaMatch = commandFactory.startMatch("Mexico", "Canada")
-                .execute();
-        var urugwayItalyMatch = commandFactory.startMatch("Urugway", "Italy")
-                .execute();
-        var argentinaAustraliaMatch = commandFactory.startMatch("Argentina", "Australia")
                 .execute();
         var spainBrazilMatch = commandFactory.startMatch("Spain", "Brazil")
                 .execute();
-        var germanyFranceMatch = commandFactory.startMatch("Germany", "France")
+        var uruguayItalyMatch = commandFactory.startMatch("Uruguay", "Italy")
+                .execute();
+        var argentinaAustraliaMatch = commandFactory.startMatch("Argentina", "Australia")
                 .execute();
 
         commandFactory.updateMatchScore(mexicoCanadaMatch.getMatchId(), 2, 2)
                 .execute();
         commandFactory.updateMatchScore(argentinaAustraliaMatch.getMatchId(), 3, 1)
                 .execute();
-        commandFactory.updateMatchScore(urugwayItalyMatch.getMatchId(), 6, 6)
+        commandFactory.updateMatchScore(uruguayItalyMatch.getMatchId(), 6, 6)
                 .execute();
         commandFactory.updateMatchScore(germanyFranceMatch.getMatchId(), 2, 2)
                 .execute();

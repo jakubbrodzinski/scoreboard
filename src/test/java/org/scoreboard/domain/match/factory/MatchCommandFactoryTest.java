@@ -71,8 +71,7 @@ class MatchCommandFactoryTest {
 
         assertThat(result)
                 .asInstanceOf(type(SummaryViewCommand.class))
-                .satisfies(command -> {
-                    assertThat(command.getCommandHandler()).isInstanceOf(SummaryViewCommandHandler.class);
-                });
+                .satisfies(command ->
+                        assertThat(command.getCommandHandler()).isInstanceOf(SummaryViewCommandHandler.class));
     }
 }

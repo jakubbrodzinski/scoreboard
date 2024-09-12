@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="271d1d47-52fc-46a0-9213-062a86a0e64c" name="Changes" comment="cleanup">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoreboard/app/dao/match/factory/MatchEntryFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoreboard/app/dao/match/model/MatchEntry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/scoreboard/app/dao/match/factory/MatchEntryFactoryTest.java" afterDir="false" />
+    <list default="true" id="271d1d47-52fc-46a0-9213-062a86a0e64c" name="Changes" comment="e2e tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scoreboard/app/dao/match/InMemoryMatchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scoreboard/app/dao/match/InMemoryMatchRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/scoreboard/app/dao/match/InMemoryMatchRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/scoreboard/app/dao/match/InMemoryMatchRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +38,8 @@
       <list>
         <option value="Interface" />
         <option value="Record" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,9 +69,12 @@
     "Gradle.MatchEntryFactoryTest.executor": "Run",
     "Gradle.MatchFactoryTest.executor": "Run",
     "Gradle.MatchTest.executor": "Run",
+    "Gradle.ScoreBoardE2eTest.executor": "Run",
+    "Gradle.ScoreBoardE2eTest.testMainScenario.executor": "Run",
+    "Gradle.ScoreBoardE2eTest.testUpdate.executor": "Run",
     "Gradle.StartMatchCommandHandlerTest.executor": "Run",
     "Gradle.SummaryViewCommandHandlerTest.executor": "Run",
-    "Gradle.SummaryViewFactoryTest.executor": "Run",
+    "Gradle.SummaryViewFactoryTest.executor": "Debug",
     "Gradle.Tests in 'org.scoreboard'.executor": "Run",
     "Gradle.Tests in 'org.scoreboard.match'.executor": "Run",
     "Gradle.UpdateScoreCommandHandlerTest.executor": "Run",
@@ -112,55 +110,7 @@
       <recent name="org.scoreboard.match.update" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Tests in 'org.scoreboard'">
-    <configuration name="GetRankedMatches" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.scoreboard.app.dao.match.InMemoryMatchRepositoryTest$GetRankedMatches&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="GetRankedMatches.shouldReturnMatchesInRankedOrder" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;org.scoreboard.app.dao.match.InMemoryMatchRepositoryTest$GetRankedMatches.shouldReturnMatchesInRankedOrder&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.ScoreBoardE2eTest">
     <configuration name="InMemoryMatchRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -185,7 +135,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="MatchEntryFactoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ScoreBoardE2eTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -198,7 +148,31 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;org.scoreboard.app.dao.match.factory.MatchEntryFactoryTest&quot;" />
+            <option value="&quot;org.scoreboard.e2e.ScoreBoardE2eTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ScoreBoardE2eTest.testUpdate" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.scoreboard.e2e.ScoreBoardE2eTest.testUpdate&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -233,13 +207,37 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="UpdateScoreCommandHandlerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;org.scoreboard.domain.match.update.UpdateScoreCommandHandlerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ScoreBoardE2eTest" />
         <item itemvalue="Gradle.Tests in 'org.scoreboard'" />
-        <item itemvalue="Gradle.GetRankedMatches.shouldReturnMatchesInRankedOrder" />
-        <item itemvalue="Gradle.GetRankedMatches" />
+        <item itemvalue="Gradle.UpdateScoreCommandHandlerTest" />
         <item itemvalue="Gradle.InMemoryMatchRepositoryTest" />
-        <item itemvalue="Gradle.MatchEntryFactoryTest" />
+        <item itemvalue="Gradle.ScoreBoardE2eTest.testUpdate" />
       </list>
     </recent_temporary>
   </component>
@@ -356,7 +354,39 @@
       <option name="project" value="LOCAL" />
       <updated>1725996880892</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="InMemoryMatchRepository">
+      <option name="closed" value="true" />
+      <created>1726001826146</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1726001826146</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update repository method">
+      <option name="closed" value="true" />
+      <created>1726144316114</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1726144316114</updated>
+    </task>
+    <task id="LOCAL-00016" summary="position fix">
+      <option name="closed" value="true" />
+      <created>1726144334787</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1726144334787</updated>
+    </task>
+    <task id="LOCAL-00017" summary="e2e tests">
+      <option name="closed" value="true" />
+      <created>1726144341168</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1726144341168</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -385,7 +415,11 @@
     <MESSAGE value="SummaryViewCommand" />
     <MESSAGE value="repackage and split between app and domain" />
     <MESSAGE value="cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanup" />
+    <MESSAGE value="InMemoryMatchRepository" />
+    <MESSAGE value="update repository method" />
+    <MESSAGE value="position fix" />
+    <MESSAGE value="e2e tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="e2e tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -402,18 +436,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/org/scoreboard/app/dao/match/InMemoryMatchRepositoryTest.java</url>
-          <line>120</line>
+          <line>159</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/scoreboard/app/dao/match/InMemoryMatchRepository.java</url>
-          <line>49</line>
+          <line>60</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/scoreboard/app/dao/match/factory/MatchEntryFactory.java</url>
           <line>24</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/scoreboard/e2e/ScoreBoardE2eTest.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/scoreboard/e2e/ScoreBoardE2eTest.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/scoreboard/domain/match/update/UpdateScoreCommandHandler.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
