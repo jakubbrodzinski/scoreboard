@@ -22,22 +22,22 @@ public class MatchCommandFactory {
     private final MatchRepository matchRepository;
     private final SummaryViewFactory summaryViewFactory;
 
-    Commnad<Match> startMatch(String homeTeam, String awayTeam) {
+    public Commnad<Match> startMatch(String homeTeam, String awayTeam) {
         return new StarMatchCommand(homeTeam, awayTeam, new StartMatchCommandHandler(matchFactory, matchRepository));
     }
 
-    Commnad<Match> updateMatchScore(String matchId, int homeTeamScore, int awayTeamScore) {
+    public Commnad<Match> updateMatchScore(String matchId, int homeTeamScore, int awayTeamScore) {
         return new UpdateScoreCommand(
                 matchId,
                 new MatchScore(homeTeamScore, awayTeamScore),
                 new UpdateScoreCommandHandler(matchRepository));
     }
 
-    Commnad<Match> finishMatch(String matchId) {
+    public Commnad<Match> finishMatch(String matchId) {
         return new FinishMatchCommand(matchId, new FinishMatchCommandHandler(matchRepository));
     }
 
-    Commnad<SummaryView> summaryView() {
+    public Commnad<SummaryView> summaryView() {
         return new SummaryViewCommand(new SummaryViewCommandHandler(matchRepository, summaryViewFactory));
     }
 }
